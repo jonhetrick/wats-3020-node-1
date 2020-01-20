@@ -11,6 +11,7 @@
 let getargs = require('../modules/getargs/index.js');
 let input = getargs.getIntegerArg();
 
+//Convert Temperature from Celsius to Fahrenheit.
 if (isNaN(input) || !Number.isInteger(input)) {
 	console.log('useage: 5-mini-app <integer>');
 } else {
