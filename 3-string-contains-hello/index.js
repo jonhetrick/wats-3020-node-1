@@ -8,7 +8,7 @@ let input = getargs.getStringArg();
 
 /**** Do not modify anything above this line ****/
 
-// TODO make sure that the user entered a string
+// make sure that the user entered a string
 if (!input) {
 	console.log('usage: 3-string-contains-hello <string>');
 	console.log('To include spaces use quotes!');
