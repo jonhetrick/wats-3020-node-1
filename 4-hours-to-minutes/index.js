@@ -10,12 +10,11 @@ let input = getargs.getIntegerArg();
 
 // test that input is a number
 // check input using isNaN and NOT Number.isInteger since we are using getIntegerArg, we won't actually hit NOT Number.isInteger
-// TODO: Found that any number below 30 would give 0 for hours, 30 -> 59 will give 1 for hours still.
-// Example: "node 4-hours-to-minutes 59" will return 59 minutes is 1 hour 59 minutes
 if (isNaN(input) || !Number.isInteger(input)) {
 	console.log('useage: 4-hours-to-minutes <integer>');
 } else {
-	let hours = (input / 60).toFixed(0);
+	// Math.floor fixes issue of anything from 30-59 still returning 1 for hours instead of 0.
+	let hours = Math.floor(input / 60)
 	let minutes = input % 60;
 
 	let hrs = hours == 1 ? 'hour' : 'hours';
