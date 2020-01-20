@@ -8,5 +8,12 @@
 // * convert pennies to dollars, for example 136 pennies is $1.36
 
 // get an integer using getargs
-let getargs = require("../modules/getargs/index.js");
+let getargs = require('../modules/getargs/index.js');
 let input = getargs.getIntegerArg();
+
+if (isNaN(input) || !Number.isInteger(input)) {
+	console.log('useage: 5-mini-app <integer>');
+} else {
+	let tempInFahrenheit = input * (9 / 5) + 32.0;
+	console.log(`${input} degrees in Celsius is ${tempInFahrenheit} in Fahrenheit!`);
+}
